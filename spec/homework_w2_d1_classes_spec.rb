@@ -42,7 +42,7 @@ end
 class TestSportsTeam < MiniTest::Test
   def setup
     @players_array = ["Jim Jimson", "Dave Daveson", "Ian Hislop"]
-    @team = SportsTeam.new("Chicago Bulls", @players_array , "Spyro the Dragon")
+    @team = SportsTeam.new("Chicago Bulls", @players_array , "Spyro the Dragon", "win", 1)
   end
 
   def test_team_name
@@ -66,7 +66,15 @@ class TestSportsTeam < MiniTest::Test
     expected = @players_array.push("Bob")
     assert_equal(expected, @team.players)
   end
-  
 
+  def test_find_player
+    assert_equal(true, @players_array.include?("Dave Daveson"))
+    # assert_equal(false, @players_array.include?("sam"))
+  end
+
+  def test_win_or_lose
+    @team.win_or_lose
+    assert_equal(4, @team.points)
+  end
 
 end

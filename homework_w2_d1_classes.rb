@@ -39,15 +39,21 @@ end
 
 class SportsTeam
 
-  attr_accessor :team_name, :players, :coach
+  attr_accessor :team_name, :players, :coach, :win_or_lose, :points
 
-  def initialize(team_name, players, coach)
+  def initialize(team_name, players, coach, win_or_lose, points)
     @team_name = team_name
     @players = players
     @coach = coach
+    @win_or_lose = win_or_lose
+    @points = points
   end
 
-
+  def win_or_lose
+    @points == 0
+    @points += 3 if @win_or_lose == "win"
+    @points -= 1 if @win_or_lose == "lose"
+end
 
   # def team_name
   #   return @team_name
@@ -64,6 +70,10 @@ class SportsTeam
   # def coach_name(new_coach)
   #   @coach = new_coach
   # end
+
+
+
+
 
 
 
