@@ -53,5 +53,19 @@ class TestSportsTeam < MiniTest::Test
     assert_equal(players_array, @team.players)
   end
 
+  def test_coach
+    assert_equal("Spyro the Dragon", @team.coach)
+  end
+
+  def test_set_coach_name
+    @team.coach = "Crash Bandicoot"
+    assert_equal("Crash Bandicoot", @team.coach)
+  end
+
+  def test_add_new_player
+    players.length
+    assert_equal(5, actual)
+  end
+
 
 end

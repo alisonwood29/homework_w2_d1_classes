@@ -1,6 +1,7 @@
 class CodeClanStudent
 
 
+
   def initialize(student_name, cohort, speech, language)
     @student_name = student_name
     @cohort = cohort
@@ -38,19 +39,31 @@ end
 
 class SportsTeam
 
+  attr_accessor :team_name, :players, :coach
+
   def initialize(team_name, players, coach)
     @team_name = team_name
     @players = players
     @coach = coach
   end
 
-  def team_name
-    return @team_name
-  end
+  # def team_name
+  #   return @team_name
+  # end
+  #
+  # def players
+  #   return @players
+  # end
+  #
+  # def coach
+  #   return @coach
+  # end
+  #
+  # def coach_name(new_coach)
+  #   @coach = new_coach
+  # end
 
-  def players
-    return @players
-  end
+
 
 
 end
