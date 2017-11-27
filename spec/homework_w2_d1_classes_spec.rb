@@ -5,7 +5,7 @@ require_relative('../homework_w2_d1_classes')
 class TestClassHomework < MiniTest::Test
 
   def setup
-    @student = Student.new("Joe", 18)
+    @student = Student.new("Joe", 18, "I can talk!", "Ruby")
   end
 
     def test_student_name
@@ -15,6 +15,7 @@ class TestClassHomework < MiniTest::Test
   def test_cohort
     assert_equal(18, @student.cohort)
   end
+
 
   def test_set_student_name
     @student.set_student_name("Alison")
@@ -26,9 +27,11 @@ class TestClassHomework < MiniTest::Test
     assert_equal(19, @student.cohort)
   end
 
-  def test_student_can_talk
-
+  def test_speech
+    assert_equal("I can talk!", @student.speech)
   end
 
-
+  def test_favourite_language
+    assert_equal("I love Ruby!", @student.language)
+  end
 end
