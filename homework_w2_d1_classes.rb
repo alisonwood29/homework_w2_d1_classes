@@ -49,11 +49,19 @@ class SportsTeam
     @points = points
   end
 
+  def add_player(name)
+    @players.push(name)
+  end
+
+  def find_player(name)
+    @players.include?(name)
+  end
+
   def win_or_lose
     @points == 0
     @points += 3 if @win_or_lose == "win"
     @points -= 1 if @win_or_lose == "lose"
-end
+  end
 
   # def team_name
   #   return @team_name

@@ -63,11 +63,13 @@ class TestSportsTeam < MiniTest::Test
   end
 
   def test_add_player
+    @team.add_player(name)
     expected = @players_array.push("Bob")
     assert_equal(expected, @team.players)
   end
 
   def test_find_player
+    @team.find_player(name)
     assert_equal(true, @players_array.include?("Dave Daveson"))
     # assert_equal(false, @players_array.include?("sam"))
   end
