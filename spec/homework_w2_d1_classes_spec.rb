@@ -2,10 +2,10 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../homework_w2_d1_classes')
 
-class TestClassHomework < MiniTest::Test
+class TestCodeClanStudent < MiniTest::Test
 
   def setup
-    @student = Student.new("Joe", 18, "I can talk!", "Ruby")
+    @student = CodeClanStudent.new("Joe", 18, "I can talk!", "Ruby")
   end
 
     def test_student_name
@@ -34,4 +34,24 @@ class TestClassHomework < MiniTest::Test
   def test_favourite_language
     assert_equal("I love Ruby!", @student.language)
   end
+
+end
+
+
+
+class TestSportsTeam < MiniTest::Test
+  def setup
+    @team = SportsTeam.new("Chicago Bulls", ["Jim Jimson", "Dave Daveson", "Ian Hislop"], "Spyro the Dragon")
+  end
+
+  def test_team_name
+    assert_equal("Chicago Bulls", @team.team_name)
+  end
+
+  def test_players
+    players_array = ["Jim Jimson", "Dave Daveson", "Ian Hislop"]
+    assert_equal(players_array, @team.players)
+  end
+
+
 end
